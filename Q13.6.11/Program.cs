@@ -17,9 +17,9 @@ namespace Q13._6._1
                 {
                     var list = new List<string>();
 
-                    foreach (string line in File.ReadLines(path))
+                    foreach (string str in File.ReadLines(path))
                     {
-                        list.Add(line);
+                        list.Add(str);
                     }
                     return list;
                 }
@@ -28,9 +28,9 @@ namespace Q13._6._1
                 {
                     var linkedList = new LinkedList<string>();
 
-                    foreach (string line in File.ReadLines(path))
+                    foreach (string str in File.ReadLines(path))
                     {
-                        linkedList.AddLast(line);
+                        linkedList.AddLast(str);
                     }
                     return linkedList;
                 }
@@ -49,11 +49,14 @@ namespace Q13._6._1
 
                     var Timer2 = Stopwatch.StartNew();
                     WriteToLinkedList(path);
+
                     sum2 += Timer2.Elapsed.TotalMilliseconds;
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"Запись в LinkedList: {Timer2.Elapsed.TotalMilliseconds}  мс");
                     Console.ResetColor();
+
                     Console.WriteLine("  ");
+
                     Thread.Sleep(500);
                 }
                 double avg1 = sum1 / runtime;
